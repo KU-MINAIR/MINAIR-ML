@@ -26,7 +26,7 @@ for i in file_list_py :
 vect = CountVectorizer()
 document_term_matrix = vect.fit_transform(corpus)       # 문서-단어 행렬 
 
-tf = pd.DataFrame(document_term_matrix.toarray(), columns=vect.get_feature_names())  
+tf = pd.DataFrame(document_term_matrix.toarray(), columns=vect.get_feature_names_out())
                                              # TF (Term Frequency)
 D = len(tf)
 df = tf.astype(bool).sum(axis=0)
