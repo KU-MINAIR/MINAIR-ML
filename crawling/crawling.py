@@ -33,7 +33,7 @@ def text_scraping(url):
         return 0
 
 
-add_word = ["여행", "볼거리"]
+add_word = ["여행", "볼거리", "분위기", "여행코스", "계획", "명소", "관광지"]
 print('크롤링 진행할 지역들을 입력해주세요 (입력을 마쳤다면 exit를 입력하세요)')
 
 area = ""
