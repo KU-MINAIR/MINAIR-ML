@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 
 # 파일 저장
-data = pd.read_csv('tfidf_table.csv', index_col=0)
+data = pd.read_csv('../tfidf/tfidf_table.csv', index_col=0)
 
 # 이상 값 0으로 대체
 data = data.replace([np.nan, np.inf, -np.inf], 0)
@@ -19,7 +19,7 @@ max_values = data.max()
 print(max_values)
 
 #0.3이 넘는 index 추출
-excluded_columns = max_values[max_values > 0.3].index
+excluded_columns = max_values[max_values > 0.4].index
 print(excluded_columns)
 
 #해당 index data 에서 열 삭제
@@ -29,7 +29,7 @@ data = data.drop(excluded_columns, axis=1)
 df_encoded = pd.get_dummies(data)
 
 # K-means 클러스터링
-kmeans = KMeans(n_clusters=20)  # Specify the number of clusters
+kmeans = KMeans(n_clusters=5)  # Specify the number of clusters
 kmeans.fit(df_encoded)
 
 # 데이터에 Cluster라는 열로 각 나라의 cluster 표시
