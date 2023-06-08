@@ -18,7 +18,7 @@ data = data.iloc[:, 1:]
 max_values = data.max()
 print(max_values)
 
-#0.3이 넘는 index 추출
+#0.4이 넘는 index 추출
 excluded_columns = max_values[max_values > 0.4].index
 print(excluded_columns)
 
